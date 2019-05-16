@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@layout/breadcrumb_alpha2"
+        motion:constraintSetEnd="@layout/two"
+        motion:duration="1000"/>
+    <Transition
+        motion:constraintSetStart="@id/one"
+        motion:constraintSetEnd="@id/three"
+        motion:duration="1000"/>
+    <Transition
+        motion:constraintSetStart="@id/three"
+        motion:constraintSetEnd="@id/two"
+        motion:duration="1000"/>
+    <Transition
+        motion:constraintSetStart="@id/three"
+        motion:constraintSetEnd="@id/one"
+        motion:duration="1000"/>
+    <Transition
+        motion:constraintSetStart="@id/two"
+        motion:constraintSetEnd="@id/three"
+        motion:duration="1000"/>
+    <Transition
+        motion:constraintSetStart="@id/two"
+        motion:constraintSetEnd="@id/one"
+        motion:duration="1000"/>
+
+    <StateSet >
+        <State
+            android:id="@+id/animate1_2"
+            motion:constraints="@id/one">
+            <Variant motion:constraints="@id/two" />
+        </State>
+        <State
+            android:id="@+id/animate2_1"
+            motion:constraints="@id/two">
+            <Variant motion:constraints="@id/one" />
+        </State>
+        <State
+            android:id="@+id/animate2_3"
+            motion:constraints="@id/two">
+            <Variant motion:constraints="@id/three" />
+        </State>
+        <State
+            android:id="@+id/animate3_2"
+            motion:constraints="@id/three">
+            <Variant motion:constraints="@id/two" />
+        </State>
+    </StateSet>
+
+
+    <ConstraintSet android:id="@+id/one">
+        <Constraint android:id="@id/number1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_number_1"
+            android:backgroundTint="@color/cyan_dark" >
+            <Layout motion:layout_constraintStart_toStartOf="parent"/>
+            <PropertySet android:visibility="gone"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@id/blue_tick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_2"
+            motion:layout_constraintEnd_toStartOf="@id/number3"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number2_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_number_2"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toStartOf="@id/number3"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/blue_tick_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_3"
+            motion:layout_constraintEnd_toStartOf="@id/number4"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number3_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_3"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toStartOf="@id/number4"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/blue_tick_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_2"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_4"
+            motion:layout_constraintEnd_toStartOf="@id/number5"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number4_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_4"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toStartOf="@id/number5"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/blue_tick_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_3"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_circle_number_5"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number5_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_circle_number_5"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibility="gone" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/two">
+        <Constraint android:id="@id/number1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_number_1"
+            android:backgroundTint="@color/cyan_dark">
+            <CustomAttribute android:visibility="gone"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@id/blue_tick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet android:visibility="visible"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@id/number2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_2"
+            motion:layout_constraintStart_toEndOf="@id/number1"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number2_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_number_2"
+            motion:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/blue_tick_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_3"
+            motion:layout_constraintEnd_toStartOf="@id/number4"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number3_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_3"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toStartOf="@id/number4"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/blue_tick_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_2"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_4"
+            motion:layout_constraintEnd_toStartOf="@id/number5"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number4_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_4"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toStartOf="@id/number5"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/blue_tick_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_3"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_circle_number_5"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number5_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_circle_number_5"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibility="visible" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/three">
+        <Constraint
+            android:id="@id/number1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_number_1"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/blue_tick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet motion:visibility="visible"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@id/number2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_2"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number2_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_number_2"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/blue_tick_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_3"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_2"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number3_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_3"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_2"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/blue_tick_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_2"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_4"
+            motion:layout_constraintEnd_toStartOf="@id/number5"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number4_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_circle_number_4"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toStartOf="@id/number5"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/blue_tick_4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/ic_circle_tick_small_cyan"
+            motion:layout_constraintStart_toEndOf="@id/blue_tick_3"
+            motion:visibility="gone" />
+
+        <Constraint
+            android:id="@id/number5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_circle_number_5"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibility="visible" />
+
+        <Constraint
+            android:id="@id/number5_cyan"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_circle_number_5"
+            android:backgroundTint="@color/cyan_dark"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibility="gone" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/four">
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/five">
+
+
+    </ConstraintSet>
+
+</MotionScene>
